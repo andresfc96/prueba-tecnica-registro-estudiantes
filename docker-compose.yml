@@ -1,0 +1,22 @@
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: student_registry_mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: student_registry
+      MYSQL_USER: app_user
+      MYSQL_PASSWORD: app_password
+    ports:
+      - '3307:3306'
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ['CMD-SHELL', 'mysqladmin ping -h localhost -u root -proot_password']
+      interval: 10s
+      timeout: 5s
+      retries: 8
+
+volumes:
+  mysql_data:
