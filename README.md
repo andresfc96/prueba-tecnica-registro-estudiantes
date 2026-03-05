@@ -54,8 +54,3 @@ Frontend:
 Si prefieres SQL manual:
 - Estructura: `backend/prisma/init.sql`
 - Seed: `backend/prisma/seed.sql`
-
-## Documento de entrega
-
-Resultado y explicacion de decisiones:
-- `docs/resultado-prueba.md`
